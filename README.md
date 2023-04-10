@@ -1,6 +1,6 @@
 # Тестовое задание на должность frontend разработчика
 
-## Приложение развернуто [здесь](https://codesandbox.io/p/github/aboronilov/code-knight-test-task/main?workspaceId=dbc74703-915a-484a-9d6a-ab689f908c0e&file=README.md)
+## Приложение развернуто [здесь](https://code-knight-test-task.vercel.app/)
 
 ## Техзадание
 Предлагаем Вам выполнить тестовые задания, после которых сможем пригласить вас на собеседование
