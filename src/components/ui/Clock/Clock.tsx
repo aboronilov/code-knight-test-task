@@ -21,19 +21,19 @@ const Clock = (props: Props) => {
         );
 
         let dateTime = new Date(data.datetime);
-        let hours = dateTime.getHours();
+        let hoursToPm = dateTime.getHours();
         let minutes = dateTime.getMinutes();
         let seconds = dateTime.getSeconds();
 
-        if (data.hour >= 12) {
+        if (hoursToPm >= 12) {
           setPm(true);
-          hours = hours - 12;
+          hoursToPm = hoursToPm - 12;
         } else {
           setPm(false);
         }
 
         setTime({
-          hours: hours ? hours : 12,
+          hours: hoursToPm ? hoursToPm : 12,
           minutes,
           seconds,
         });
@@ -51,6 +51,10 @@ const Clock = (props: Props) => {
       <div className="my-10 font-semibold text-3xl text-slate-700">
         Dynamic clock
       </div>
+      <div className="">
+        <div className={`font-bold ${pm ? "opacity-10" : ""}`}>AM</div>
+        <div className={`font-bold ${pm ? "" : "opacity-10"}`}>PM</div>
+      </div>
       <div className="flex h-full items-center justify-center">
         <div className="flex flex-col sm:flex-row">
           <DynamicClockCircle
@@ -66,10 +70,6 @@ const Clock = (props: Props) => {
             color="text-[#5B6EF7]"
             percentage={time.seconds}
           />
-        </div>
-        <div className="">
-          <div className={`font-bold ${pm ? "opacity-10" : ""}`}>AM</div>
-          <div className={`font-bold ${pm ? "" : "opacity-10"}`}>PM</div>
         </div>
       </div>
     </div>
